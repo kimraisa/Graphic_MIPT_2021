@@ -84,25 +84,63 @@ int main( void )
 	glm::mat4 MVP        = Projection * View * Model; // Remember, matrix multiplication is the other way around
 
 	// Our vertices. Tree consecutive floats give a 3D vertex; Three consecutive vertices give a triangle.
-	// A cube has 6 faces with 2 triangles each, so this makes 6*2=12 triangles, and 12*3 vertices
+	// 8 triangles, and 24 vertices
 	static const GLfloat g_vertex_buffer_data[] = { 
-		        //треугольники
+		  //тетраэдры
+         3.0f, 0.0f, 0.0f,
+         0.0f, 0.0f, 3.0f,
+         0.0f, 3.0f, 0.0f,
+         0.0f, 0.0f, 0.0f,
+         3.0f, 0.0f, 0.0f,
+         0.0f, 0.0f, 3.0f,
+         0.0f, 0.0f, 0.0f,
+         0.0f, 0.0f, 3.0f,
+         0.0f, 3.0f, 0.0f,
          0.0f, 0.0f, 0.0f,
          3.0f, 0.0f, 0.0f,
          0.0f, 3.0f, 0.0f,
+
+        -3.0f, 0.0f, 0.0f,
+        0.0f, 0.0f, -3.0f,
+        0.0f, -3.0f, 0.0f,
         1.0f, 1.0f, 1.0f,
         -3.0f, 0.0f, 0.0f,
         0.0f, 0.0f, -3.0f,
+        1.0f, 1.0f, 1.0f,
+        0.0f, 0.0f, -3.0f,
+        0.0f, -3.0f, 0.0f,
+        1.0f, 1.0f, 1.0f,
+        -3.0f, 0.0f, 0.0f,
+        0.0f, -3.0f, 0.0f,
 	};
 
 	// One color for each vertex. They were generated randomly.
-	static const GLfloat g_color_buffer_data[] = { 
-		1.0f, 0.0f, 0.0f,
+	static const GLfloat g_color_buffer_data[] = {
+	    1.0f, 0.0f, 0.0f,
         1.0f, 0.0f, 0.0f,
         1.0f, 0.0f, 0.0f,
         1.0f, 1.0f, 0.0f,
         1.0f, 1.0f, 0.0f,
         1.0f, 1.0f, 0.0f,
+        0.60f,    0.40f,    0.12f,
+        0.60f,    0.40f,    0.12f,
+        0.60f,    0.40f,    0.12f,
+        0.98f,    0.04f,    0.7f,
+        0.98f,    0.04f,    0.7f,
+        0.98f,    0.04f,    0.7f,
+
+        0.0f, 1.0f, 0.0f,
+        0.0f, 1.0f, 0.0f,
+        0.0f, 1.0f, 0.0f,
+        1.0f, 1.0f, 0.0f,
+        1.0f, 1.0f, 0.0f,
+        1.0f, 1.0f, 0.0f,
+        0.0f, 0.0f, 0.0f,
+        0.0f, 0.0f, 0.0f,
+        0.0f, 0.0f, 0.0f,
+        1.0f, 1.0f, 1.0f,
+        1.0f, 1.0f, 1.0f,
+        1.0f, 1.0f, 1.0f,
 	};
 
 	GLuint vertexbuffer;
